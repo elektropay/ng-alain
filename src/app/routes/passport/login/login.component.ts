@@ -141,13 +141,13 @@ export class UserLoginComponent implements OnDestroy {
     let callback = ``;
     // tslint:disable-next-line: prefer-conditional-expression
     if (environment.production) {
-      callback = 'https://ng-alain.github.io/ng-alain/#/callback/' + type;
+      callback = 'https://partners.elektropay.com/#/callback/' + type;
     } else {
       callback = 'http://localhost:4200/#/callback/' + type;
     }
     switch (type) {
       case 'auth0':
-        url = `//cipchk.auth0.com/login?client=S0KMdvy677ld1M0hzGk5vUt1KDbvTaDw&redirect_uri=${decodeURIComponent(
+        url = `//elektropay.auth0.com/login?client=S0KMdvy677ld1M0hzGk5vUt1KDbvTaDw&redirect_uri=${decodeURIComponent(
           callback,
         )}`;
         break;
