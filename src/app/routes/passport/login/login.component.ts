@@ -141,7 +141,7 @@ export class UserLoginComponent implements OnDestroy {
     let callback = ``;
     // tslint:disable-next-line: prefer-conditional-expression
     if (environment.production) {
-      callback = 'https://partners.elektropay.com/#/callback/' + type;
+      callback = 'https://partners.elektropay.com/ng-alain/#/callback/' + type;
     } else {
       callback = 'http://localhost:4200/#/callback/' + type;
     }
