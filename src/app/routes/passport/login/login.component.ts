@@ -109,7 +109,7 @@ export class UserLoginComponent implements OnDestroy {
     // 默认配置中对所有HTTP请求都会强制 [校验](https://ng-alain.com/auth/getting-started) 用户 Token
     // 然一般来说登录请求不需要校验，因此可以在请求URL加上：`/login?_allow_anonymous=true` 表示不触发用户 Token 校验
     this.http
-      .post('login/account?_allow_anonymous=false', {
+      .post('login/account?_allow_anonymous=true', {
         type: this.type,
         userName: this.userName.value,
         password: this.password.value,
@@ -141,13 +141,13 @@ export class UserLoginComponent implements OnDestroy {
     let callback = ``;
     // tslint:disable-next-line: prefer-conditional-expression
     if (environment.production) {
-      callback = 'https://partners.elektropay.com/#/callback/' + type;
+      callback = 'https://ng-alain.github.io/ng-alain/#/callback/' + type;
     } else {
       callback = 'http://localhost:4200/#/callback/' + type;
     }
     switch (type) {
       case 'auth0':
-        url = `//cipchk.auth0.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(
+        url = `//cipchk.auth0.com/login?client=S0KMdvy677ld1M0hzGk5vUt1KDbvTaDw&redirect_uri=${decodeURIComponent(
           callback,
         )}`;
         break;
